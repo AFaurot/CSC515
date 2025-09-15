@@ -14,7 +14,7 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 means = []
 medians = []
 gaussians_sigma0 = []
-gaussians_sigma2 = []
+gaussians_sigma1 = []
 
 for k in KERNEL_SIZES:
     # Mean
@@ -24,7 +24,7 @@ for k in KERNEL_SIZES:
     # Gaussian with sigma=0 (auto)
     gaussians_sigma0.append(cv2.GaussianBlur(img, (k, k), SIGMA_VALUES[0]))
     # Gaussian with sigma=2.0
-    gaussians_sigma2.append(cv2.GaussianBlur(img, (k, k), SIGMA_VALUES[1]))
+    gaussians_sigma1.append(cv2.GaussianBlur(img, (k, k), SIGMA_VALUES[1]))
 
 # Plot results: 3 rows (kernel sizes), 4 columns (Mean, Median, Gaussian sigma=0, Gaussian sigma=2)
 fig, axes = plt.subplots(len(KERNEL_SIZES), 4, figsize=(20, 6 * len(KERNEL_SIZES)))
@@ -47,7 +47,7 @@ for i, k in enumerate(KERNEL_SIZES):
     axes[i, 2].imshow(gaussians_sigma0[i])
     axes[i, 2].axis("off")
 
-    axes[i, 3].imshow(gaussians_sigma2[i])
+    axes[i, 3].imshow(gaussians_sigma1[i])
     axes[i, 3].axis("off")
 
 plt.tight_layout()
