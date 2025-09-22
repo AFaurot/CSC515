@@ -2,10 +2,6 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-''' This is a script to perform the morphological operation of dilation, erosion, opening, and closing on a 
-scanned image of handwriting in cursive. Adaptive thresholding is used to convert the grayscale image to binary.
-This works better than global thresholding for this image.'''
-
 # Read image in grayscale
 img = cv2.imread("Module5CT.jpg")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
