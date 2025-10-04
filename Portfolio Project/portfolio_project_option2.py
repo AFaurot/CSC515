@@ -11,6 +11,15 @@ Features:
 - Pastes processed face back into original image.
 - Skips blurring for faces where eyes are not detected.
 - Saves results to "output/" folder.
+
+Requirements: Python 3.x, OpenCV (cv2), numpy
+
+Install with: pip install opencv-python numpy
+
+How to use:
+1. Create an "images/" folder in the same directory as this script.
+2. Add images to the "images/" folder.
+3. Run the script. It will process each image, show intermediate results, and save final images to "output/" folder.
 """
 import cv2
 import os
